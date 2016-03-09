@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EK5-Kv-hMQ">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <items>
+                                    <navigationItem title="StopWatch" id="ZAd-cH-1vx"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:05.58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qny-hk-5OD">
+                                <rect key="frame" x="0.0" y="64" width="414" height="100"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bwE-e3-XhK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN0-fK-lA7">
+                                <rect key="frame" x="102" y="221" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="2ZR-Wz-V3a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1P-Ov-MMR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5k-sr-C9Z">
+                                <rect key="frame" x="267" y="221" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="B5c-DP-m48"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Lap"/>
+                                <connections>
+                                    <action selector="lapReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0KX-Kz-nFe"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dzu-wq-QJE">
+                                <rect key="frame" x="0.0" y="331" width="414" height="405"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vYs-bO-GkF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S8F-ja-uD9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qny-hk-5OD" firstAttribute="trailing" secondItem="EK5-Kv-hMQ" secondAttribute="trailing" id="2iV-pi-hbI"/>
+                            <constraint firstItem="Qny-hk-5OD" firstAttribute="leading" secondItem="EK5-Kv-hMQ" secondAttribute="leading" id="6RR-zC-tJL"/>
+                            <constraint firstItem="PN0-fK-lA7" firstAttribute="top" secondItem="Qny-hk-5OD" secondAttribute="bottom" constant="57" id="7es-qp-h4K"/>
+                            <constraint firstItem="PN0-fK-lA7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="82" id="7fh-RL-Yrp"/>
+                            <constraint firstItem="PN0-fK-lA7" firstAttribute="baseline" secondItem="X5k-sr-C9Z" secondAttribute="baseline" id="Oq3-MK-1Md"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X5k-sr-C9Z" secondAttribute="trailing" constant="72" id="QPv-aj-q6g"/>
+                            <constraint firstItem="Qny-hk-5OD" firstAttribute="top" secondItem="EK5-Kv-hMQ" secondAttribute="bottom" id="Y58-iA-M2v"/>
+                            <constraint firstItem="dzu-wq-QJE" firstAttribute="top" secondItem="X5k-sr-C9Z" secondAttribute="bottom" constant="80" id="dd1-tg-kfg"/>
+                            <constraint firstItem="dzu-wq-QJE" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="hHG-O9-cmG"/>
+                            <constraint firstAttribute="trailing" secondItem="EK5-Kv-hMQ" secondAttribute="trailing" id="hhu-RJ-dW2"/>
+                            <constraint firstItem="dzu-wq-QJE" firstAttribute="trailing" secondItem="Qny-hk-5OD" secondAttribute="trailing" id="ssR-H1-id4"/>
+                            <constraint firstItem="EK5-Kv-hMQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tnG-Vc-ueB"/>
+                            <constraint firstItem="EK5-Kv-hMQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x2F-M9-n9G"/>
+                            <constraint firstItem="dzu-wq-QJE" firstAttribute="leading" secondItem="Qny-hk-5OD" secondAttribute="leading" id="xrt-fy-EIZ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="lapresetBtn" destination="X5k-sr-C9Z" id="Fib-As-1WZ"/>
+                        <outlet property="lapsTableView" destination="dzu-wq-QJE" id="6z3-yp-nAD"/>
+                        <outlet property="startstopBtn" destination="PN0-fK-lA7" id="i4J-fU-aGg"/>
+                        <outlet property="stopwatchLabel" destination="Qny-hk-5OD" id="NZC-SD-qcV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="389"/>
+        </scene>
+    </scenes>
+</document>
